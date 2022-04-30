@@ -20,6 +20,9 @@ function updateTime() {
   // followed by stringification, to avoid having to pad with 0's
   const timeText = "0." + Math.floor(time * DISPLAY_PRECISION)
   document.getElementById("time").innerText = timeText
+  // display two fewer digits in the tab name because it gets
+  // updated less frequently when not actively viewing the page
+  document.title = timeText.slice(0, -2)
 }
 
 // update the time 10x per visible increment, to smooth over
